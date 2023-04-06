@@ -1,0 +1,3 @@
+docker exec -it robodog2 /bin/sh
+docker run -p 80:8080 --name person --rm -it person
+doskey /h > f:\cmdHistory.txt

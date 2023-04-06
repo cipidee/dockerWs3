@@ -1,0 +1,48 @@
+Server [localhost]:
+Database [postgres]:
+Port [5432]:
+Username [postgres]:
+Password for user postgres:
+psql (15.1)
+WARNING: Console code page (852) differs from Windows code page (1250)
+         8-bit characters might not work correctly. See psql reference
+         page "Notes for Windows users" for details.
+Type "help" for help.
+
+postgres=# CREATE DATABASE dockerdb;
+CREATE DATABASE
+postgres=# \c dockerdb
+You are now connected to database "dockerdb" as user "postgres".
+dockerdb=# CREATE USER person WITH PASSWORD 'person'
+dockerdb-# ;
+CREATE ROLE
+dockerdb=# GRANT ALL PRIVILEGES TO person;
+ERROR:  syntax error at or near "TO"
+LINE 1: GRANT ALL PRIVILEGES TO person;
+                             ^
+dockerdb=# GRANT ALL PRIVILEGES ON dockerdb TO person;
+ERROR:  relation "dockerdb" does not exist
+dockerdb=# GRANT ALL PRIVILEGES ON DATABASE dockerdb TO person;
+GRANT
+dockerdb=# \c dockerdb person
+Password for user person:
+You are now connected to database "dockerdb" as user "person".
+dockerdb=> CREAT TABLE person;
+ERROR:  syntax error at or near "CREAT"
+LINE 1: CREAT TABLE person;
+        ^
+dockerdb=> CREATE TABLE person;
+ERROR:  syntax error at or near ";"
+LINE 1: CREATE TABLE person;
+                           ^
+dockerdb=> CREATE TABLE person (id serial);
+ERROR:  permission denied for schema public
+LINE 1: CREATE TABLE person (id serial);
+                     ^
+dockerdb=> \c dockerdb postgres;
+Password for user postgres:
+You are now connected to database "dockerdb" as user "postgres".
+dockerdb=# GRANT ALL ON SCHEMA PUBLIC TO person;
+GRANT
+dockerdb=# GRANT ALL privileges ON SCHEMA PUBLIC TO person;
+GRANT

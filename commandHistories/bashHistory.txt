@@ -1,0 +1,40 @@
+  501  cd /f/CODECOOL/Enterprise/Journey/robodog2-java-adamfilep
+  502  docker pull mvn:3.9.1-amazoncorretto-20
+  503  docker login
+  504  docker pull mvn:3.9.1-amazoncorretto-20
+  505  docker pull mvn:3.9.1-amazoncorretto-19
+  506  docker pull maven:3.9.1-amazoncorretto-19
+  507  docker images --help
+  508  docker images --digests
+  509  docker images --digests | grep 'maven'
+  510  docker pull amazoncorretto:19-alpine
+  511  docker images --digests
+  512  docker build -t robodog2 -f DockerfileBest .
+  513  docker pull maven:3.9.1-amazoncorretto-19@sha256:f03397d19ff99a9348bcd29b42eacd96cba06bc88ccaf6acf1603706e8dd80e1
+  514  docker pull amazoncorretto:19-alpine@sha256:21cc27d3f3a4a79b32c060bd55576a22922a2a70bfe7a6b3a886ad8119ecc174
+  515  docker build -t robodog2 -f DockerfileBest .
+  516  docker build -t robodog2 -f DockerfileBest .
+  517  docker run -p 80:8080 --rm -d robodog2 
+  518  docker stopo
+  519  docker stop
+  520  docker stop robodog2
+  521  docker stop ea43f60458
+  522  docker run -p 80:8080 --name robodog2 --rm -d robodog2 
+  523  docker exec -it robodog2 /bin/sh 
+  524  docker build -t robodog2 -f DockerfileBest .
+  525  docker build -t robodog2 -f DockerfileBest .
+  526  docker build -t robodog2 -f DockerfileBest .
+  527  docker build -t robodog2 -f DockerfileBest .
+  528  docker build -t robodog2 -f DockerfileBest .
+  529  docker build -t robodog2 -f DockerfileBest .
+  530  docker run -p 80:8080 --name robodog2 --rm -d robodog2 
+  531  cd ..
+  532  cd dockerdb
+  533  docker build -t person .
+  534  docker run -p 80:8080 --name person --rm -d person 
+  535  docker run -p 80:8080 --name person --rm -d person 
+  536  docker build -t person .
+  537  docker run -p 80:8080 --name person --rm -it person 
+  538  docker build -t person .
+  539  docker run -p 80:8080 -e DB_URL=host.docker.internal --name person --rm -d person 
+  540  history > /f/CODECOOL/Enterprise/Journey/dockerdb/bashHistory.txt
