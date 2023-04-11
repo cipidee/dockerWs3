@@ -1,0 +1,20 @@
+services:
+  dockerdbpsql:
+    image: postgres:alpine
+    environment:
+      - POSTGRES_DB=dockerdb
+      - POSTGRES_USER=person
+      - POSTGRES_PASSWORD=person
+    ports:
+      - "5442:5432"
+    restart: on-failure
+  personapp:
+    image: person
+    depends_on:
+      - dockerdbpsql
+    environment:
+      - DB_URL=dockerdbpsql
+      - DB_PORT=5432
+    ports:
+      - "80:8080"
+

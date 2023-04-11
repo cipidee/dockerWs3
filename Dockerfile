@@ -20,7 +20,11 @@ CMD ["java", "-jar", "application.jar"]
 #docker run -p 80:8080 -e DB_URL=dockerdb --name person --rm -d person
 
 #docker network create mynetwork
-#docker run --name dockerdbpsql --network mynetwork -p 5442:5432 -e POSTGRES_DB=dockerdb -e POSTGRES_USER=person -e POSTGRES_PASSWORD=person -d postgres:alpine
+#docker run --name dockerdbpsql
+#--network mynetwork -p 5442:5432
+#-e POSTGRES_DB=dockerdb
+#-e POSTGRES_USER=person -e POSTGRES_PASSWORD=person
+#-d postgres:alpine
 #docker run --network mynetwork -e DB_URL=dockerdbpsql -e DB_PORT=5432 -it person
 
 
