@@ -9,7 +9,8 @@ services:
       - "5442:5432"
     restart: on-failure
   personapp:
-    image: person
+    build:
+      context: .
     depends_on:
       - dockerdbpsql
     environment:
